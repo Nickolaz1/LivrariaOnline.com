@@ -1,0 +1,10 @@
+{% if livros %}
+    <ul>
+        {% for livro in livros %}
+            <li>{{ livro.titulo }}</li>
+            <img src="{{ livro.capa }}" alt="Capa do livro"> 
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum livros encontrado.</p>
+{% endif %}
