@@ -1,8 +1,9 @@
-<html>
-    <head>
-        <title>Home</title>
-    </head>
-    <body>
-        <h2>Hello World, {{ nome }}</h2>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block 'title' %}
+    LivrariaOnline - Home
+{% endblock 'title' %}
+
+{% block 'container' %}
+    <h2>Hello World, {{ nome }}</h2>
+{% endblock 'container' %}
