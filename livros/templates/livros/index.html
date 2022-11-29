@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block 'head' %}
+{% endblock 'head' %}
+
 {% block 'title' %}
     LivrariaOnline - Home
 {% endblock 'title' %}
@@ -8,17 +11,17 @@
 {% block 'container' %}
     <main id="app">
         <section id="logomarca">
-            <h1>LivrariaOnline</h1>
-            <h4>Aqui você encontra as melhores promoções para completar sua estante de livros.</h4>
+            <h1 class="titulo">LivrariaOnline</h1>
+            <h4 class="subtitulo">Aqui você encontra as melhores promoções para completar sua estante de livros.</h4>
         </section>
-        <section id="promocoes" style="display: flex; gap: 50px; padding: 30px">
+        <section id="promocoes">
             {% for livro in livros %}
-                <div class="card" style="width: 18rem;">
+                <div class="card card-estilo">
                     <img src="{{ livro.capa }}" class="card-img-top" alt="Capa do livro - {{ livro.titulo }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ livro.titulo }}</h5>
                         <p class="card-text">{{ livro.autor }}</p>
-                        <p class="card-text">{{ livro.descricao }}</p>
+                        {% comment %} <p class="card-text">{{ livro.descricao }}</p> {% endcomment %}
                         <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
                     </div>
                 </div>
